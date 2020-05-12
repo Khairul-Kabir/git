@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+
+    <div ng-app="FeedbackApp" ng-controller="FeedbackCtrl">
+
+        <table>
+            <tr ng-repeat="item in $scope.feedbacks">
+                <td>{{item}}</td>
+            </tr>
+        </table>
+</div>
+    <script>
+        var app = angular.module('FeedbackApp', []);
+        app.controller('FeedbackCtrl', function ($scope, $http) {
+
+            //var config = {
+            //    headers: {
+            //        'Content-Type': 'application/json;'
+            //    }
+            //}
+
+            //feedBackCtrl = this;
+            //feedBackCtrl.Model = {};
+            //feedBackCtrl.Model.Data = null;
+            //feedBackCtrl.Model.Message = "Search";
+            //feedBackCtrl.Model.Status = true;
+            //feedBackCtrl.Model = {};
+
+            //feedBackCtrl.JsonModel = {};
+            //feedBackCtrl.Model.PageIndex = 10;
+            //feedBackCtrl.Model.PageSize = 10;
+            //feedBackCtrl.Model.Data = feedBackCtrl.Model;
+            //var data = feedBackCtrl.Model;
+            //var URL = "https://localhost:44328/api/FeedBack/PostList";
+            //$http.post(URL, angular.fromJson(data),
+            //    {
+            //        headers: {
+            //            'Content-Type': 'application/json'
+            //        }
+            //    }
+            //).success(function (response) {
+            //    if (response.Status == 1) {
+            //        Console.log(response);
+            //    }
+            //    else {
+            //        //
+            //    }
+
+            //});
+
+            $http.get("https://localhost:44328/api/FeedBack/GetPostList")
+                .then(function (response) {
+                    console.log(response.data.Data);
+                    $scope.feedbacks = response.data.Data;
+                });
+        });
+    </script>
+
+</body>
+</html>

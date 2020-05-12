@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FeedBackModelStoreContainer" CdmEntityContainer="FeedBackEntities">
+    <EntitySetMapping Name="LikeDislikes">
+      <EntityTypeMapping TypeName="FeedBackModel.LikeDislike">
+        <MappingFragment StoreEntitySet="LikeDislike">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CmntLike" ColumnName="CmntLike" />
+          <ScalarProperty Name="CmntDislike" ColumnName="CmntDislike" />
+          <ScalarProperty Name="CommentUniqueCode" ColumnName="CommentUniqueCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="FeedBackModel.Post">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PostName" ColumnName="PostName" />
+          <ScalarProperty Name="PostUniqueCode" ColumnName="PostUniqueCode" />
+          <ScalarProperty Name="MakeDate" ColumnName="MakeDate" />
+          <ScalarProperty Name="MadeBy" ColumnName="MadeBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="FeedBackModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="FeedBackModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="MadeBy" ColumnName="MadeBy" />
+          <ScalarProperty Name="MakeDate" ColumnName="MakeDate" />
+          <ScalarProperty Name="PostUniqueCode" ColumnName="PostUniqueCode" />
+          <ScalarProperty Name="CommentUniqueCode" ColumnName="CommentUniqueCode" />
+          <ScalarProperty Name="CommentName" ColumnName="CommentName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
