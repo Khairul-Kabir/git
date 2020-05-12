@@ -25,6 +25,7 @@ namespace FeedbackCollection.Controllers
             _IFeedBack = feedBack;
         }
 
+        //[HttpGet]
         public JsonModel GetPostList()
         {
             JsonModel jsonModel = new JsonModel();
